@@ -14,8 +14,7 @@ const Layout = lazy(() => import("./components/Layout/Layout"));
 const Home = lazy(() => import("./page/Home/page"));
 const About = lazy(() => import("./page/About Us/page"));
 const Contact = lazy(() => import("./page/Contact Us/page"));
-const Internship = lazy(() => import("./page/Internship/page"));
-const LeadGeneration = lazy(() => import("./page/Lead Generation/page"));
+const CareerOutcomes = lazy(() => import("./page/CareerOutcomes/page"));
 const More = lazy(() => import("./page/More/page"));
 
 const Programs = lazy(() => import("./page/Programs/page"));
@@ -57,13 +56,10 @@ const App = () => {
               <Route path="uiuxdesiner" element={<UIUXDesign />}></Route>
 
               <Route path="contact" element={<Contact />}></Route>
-              <Route path="internship" element={<Internship />}></Route>
-              <Route
-                path="lead/generation"
-                element={<LeadGeneration />}
-              ></Route>
+              <Route path="CareerOutcomes" element={<CareerOutcomes />}></Route>
+
               <Route path="more" element={<More />}></Route>
-              <Route path="refer/earn" element={<Refer />}></Route>
+              <Route path="refer-earn" element={<Refer />}></Route>
               <Route path="services" element={<Services />}></Route>
               <Route path="who" element={<Who />}></Route>
               <Route path="*" element={<NotFound />} />

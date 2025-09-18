@@ -5,6 +5,8 @@ import Vision from '../../components/Vision/Vision'
 import Team from '../../components/Team/Team'
 import Stats from '../../components/Stats/Stats'
 import CallToAction from '../../components/CallToAction/CallToAction'
+import TrustedByGovt from '../../components/TrustedByGovt/TrustedByGovt'
+import CallToActionForm from '../../forms/CallToActionForm/CallToActionForm'
 
 const About = () => {
   return (
@@ -12,9 +14,10 @@ const About = () => {
       <WelcomeSection/>
       <Mission/>
       <Vision/>
+      <TrustedByGovt/>
       <Team/>
       <Stats/>
-      <CallToAction/>
+      <CallToActionForm/>
     </div>
   )
 }

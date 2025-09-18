@@ -12,6 +12,7 @@ import FeeStructure from '../../components/FeeStructure/FeeStructure'
 import HiringPartners from '../../components/HiringPartners/HiringPartners'
 import SuccessStories from '../../components/SuccessStories/SuccessStories'
 import CallToAction from '../../components/CallToAction/CallToAction'
+import CallToActionForm from '../../forms/CallToActionForm/CallToActionForm'
 
 const MERNStack = () => {
   return (
@@ -28,8 +29,7 @@ const MERNStack = () => {
       <FeeStructure/>
       <HiringPartners/>
       <SuccessStories/>
-      <CallToAction/>
-
+<CallToActionForm/>
   
     </div>
   )

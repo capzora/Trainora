@@ -1,9 +1,18 @@
 import React from 'react'
+import ServicesHero from '../../components/ServicesHero/ServicesHero'
+import TrainingPrograms from '../../components/TrainingPrograms/TrainingPrograms'
+import EdTechSolutions from '../../components/EdTechSolutions/EdTechSolutions'
+import CallToActionForm from '../../forms/CallToActionForm/CallToActionForm'
 
 const Services = () => {
   return (
     <div>
-      <h1>Servies</h1>
+<ServicesHero/>
+<TrainingPrograms/>
+<EdTechSolutions/>
+<CallToActionForm/>
+
+
     </div>
   )
 }
