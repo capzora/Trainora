@@ -7,7 +7,7 @@ app.use(express.json());
 
 // Route
 app.get("/", (req, res) => {
-  res.send("Hello, Express backend is running on 5000!");
+  res.send("Hello, Express backend is running !");
 });
 
 // Start server
