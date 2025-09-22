@@ -62,3 +62,12 @@ export const getEnrollmentsByEmail = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
+
+export const listAllEnrollments = async (req, res) => {
+  try {
+    const enrollments = await Enrollment.find().sort({ createdAt: -1 });
+    res.json({ success: true, count: enrollments.length, data: enrollments });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
