@@ -1,16 +1,62 @@
-const express = require("express");
+require('dotenv').config();
+const express = require('express');
+const mongoose = require('mongoose');
+const cookieParser = require('cookie-parser');
+const helmet = require('helmet');
+const cors = require('cors');
+const path = require('path');
+const User = require("./models/user")
+
+
+const leadRoutes = require('./routes/lead')
+const authRoutes = require('./routes/auth');
+
 const app = express();
-const PORT = 5000;
+app.use(cors({
+  origin: "http://localhost:5173",  
+  credentials: true,                
+}));
 
-// Middleware
+
 app.use(express.json());
+app.use(cookieParser());
+app.use(helmet());
 
-// Route
-app.get("/", (req, res) => {
-  res.send("Hello, Express backend is running on 5000!");
+
+
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(() => console.log('✅ MongoDB connected'))
+.catch(err => console.error(' MongoDB connection error:', err));
+
+// after DB connection
+
+
+
+// routes
+app.use('/auth', authRoutes);
+app.use('/lead', leadRoutes);
+app.use('/brochures', express.static(path.join(__dirname, 'brochures')));
+// const paymentRoutes = require('./routes/payment');
+// app.use('/payments', paymentRoutes);
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT,"0.0.0.0", () => console.log(`Listening ${PORT}`));
+
+
+// ************** used for deleting tested users into db *************** 
+// app.delete("/users", async (req, res) => {
+//   try {
+//     await User.deleteMany({});
+//     res.json({ message: "All users deleted ✅" });
+//   } catch (err) {
+//     res.status(500).json({ error: err.message });
+//   }
+// });
+
+app.get('/', (req, res) => {
+    res.send("hello");
 });
 
-// Start server
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});
