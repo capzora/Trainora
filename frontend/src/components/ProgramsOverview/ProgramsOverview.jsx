@@ -6,37 +6,37 @@ const programs = [
     title: "Data Science with AI",
     duration: "6 Months",
     image: "/assets/image/datascience.png",
-    path: "/datasciencewithai",
+    path: "/data-science-ai",
   },
   {
     title: "Data Analytics",
     duration: "5 Months",
     image: "/assets/image/dataanalytics.png",
-    path: "/dataanalytic",
+    path: "/data-analytics",
   },
   {
     title: "MERN Stack",
     duration: "6 Months",
     image: "/assets/image/mernstack.png",
-    path: "/mernstack",
+    path: "/mern-stack",
   },
   {
     title: "Java Full Stack",
     duration: "6 Months",
     image: "/assets/image/javafullstack.png",
-    path: "/javafullstack",
+    path: "/java-full-stack",
   },
   {
     title: "DevOps Engineering",
     duration: "4 Months",
     image: "/assets/image/devops.png",
-    path: "/devops",
+    path: "/devops-engineering",
   },
   {
     title: "UI/UX Design",
     duration: "3 Months",
     image: "/assets/image/uiux.png",
-    path: "/uiux",
+    path: "/ui-ux-designer",
   },
 ];
 

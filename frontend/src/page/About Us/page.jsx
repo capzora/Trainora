@@ -5,7 +5,7 @@ import Vision from '../../components/Vision/Vision'
 import Team from '../../components/Team/Team'
 import Stats from '../../components/Stats/Stats'
 import TrustedByGovt from '../../components/TrustedByGovt/TrustedByGovt'
-// import CallSection from '../../components/CallToAction/CallToAction'
+import CallSection from '../../components/CallToAction/CallToAction'
 
 const About = () => {
   return (
@@ -16,7 +16,7 @@ const About = () => {
       <TrustedByGovt/>
       <Team/>
       <Stats/>
-      {/* <CallSection/> */}
+      <CallSection/>
     </div>
   )
 }

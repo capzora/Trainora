@@ -6,12 +6,12 @@ const Footer = () => {
   const navigate = useNavigate();
 
   const programs = [
-    { name: "Data Science with AI", path: "/datasciencewithai" },
-    { name: "Data Analytics", path: "/dataanalytic" },
-    { name: "MERN Stack", path: "/mernstack" },
-    { name: "Java Full Stack", path: "/javafullstack" },
-    { name: "DevOps Engineering", path: "/devops" },
-    { name: "UI/UX Design", path: "/uiux" },
+    { name: "Data Science with AI", path: "/data-science-ai" },
+    { name: "Data Analytics", path: "/data-analytics" },
+    { name: "MERN Stack", path: "/mern-stack" },
+    { name: "Java Full Stack", path: "/java-full-stack" },
+    { name: "DevOps Engineering", path: "/devops-engineering" },
+    { name: "UI/UX Design", path: "/ui-ux-designer" },
   ];
 
   return (
@@ -36,10 +36,10 @@ const Footer = () => {
             <a href="#" className="hover:text-white">
               <FaTwitter size={20} />
             </a>
-            <a href="#" className="hover:text-white">
+            <a href="https://www.linkedin.com/company/trainora-ai/" className="hover:text-white">
               <FaLinkedin size={20} />
             </a>
-            <a href="#" className="hover:text-white">
+            <a href="https://www.instagram.com/trainora.ai/" className="hover:text-white">
               <FaInstagram size={20} />
             </a>
           </div>
@@ -73,9 +73,9 @@ const Footer = () => {
             </li>
             <li
               className="hover:text-white cursor-pointer"
-              onClick={() => navigate("/internship")}
+              onClick={() => navigate("/career-outcomes")}
             >
-              Internship
+              Career Outcomes
             </li>
             <li
               className="hover:text-white cursor-pointer"

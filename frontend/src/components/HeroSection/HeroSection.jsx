@@ -57,7 +57,7 @@ const HeroSection = () => {
 
             {/* Enroll Button */}
             <button
-              onClick={() => navigate("/datasciencewithai")}
+              onClick={() => navigate("/data-science-ai")}
               className="px-6 py-3 bg-[#10B981] text-white rounded-lg font-medium hover:bg-green-600 transition"
             >
               Enroll Now
