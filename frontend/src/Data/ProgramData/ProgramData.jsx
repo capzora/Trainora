@@ -1,7 +1,7 @@
 export const programsData = {
   // 1. Data Science with AI
   "data-science-ai": {
-    title: "Data Science with AI",
+    title: "Data Science with AI or mern stack",
     hero: {
       heading: "Master Data Science with AI",
       subheading:
