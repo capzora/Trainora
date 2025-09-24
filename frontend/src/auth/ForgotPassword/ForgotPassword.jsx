@@ -4,6 +4,7 @@ const ForgotPassword = () => {
   return (
     <div>
       <h1>ForgotPassword</h1>
+      <h1>update forgot</h1>
     </div>
   )
 }
