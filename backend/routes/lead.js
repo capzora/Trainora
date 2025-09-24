@@ -4,10 +4,7 @@ const bcrypt = require('bcrypt');
 const Lead = require('../models/lead');  // adjust path as needed
 const sgMail = require('@sendgrid/mail');
 const path = require("path")
-
-
 const router = express.Router();
-
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 

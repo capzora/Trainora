@@ -2,11 +2,11 @@ const express = require('express');
 const { body, validationResult } = require('express-validator');
 const crypto = require('crypto');
 const jwt = require('jsonwebtoken');
-
+const passport = require("passport");
 const User = require('../models/user');
 const { hashToken, signAccessToken, signRefreshToken } = require('../utils/tokens');
 const { sendEmail } = require('../utils/email');
-
+const Contact = require("../models/contact")
 const router = express.Router();
 
 const COOKIE_OPTIONS = {
@@ -264,5 +264,63 @@ router.post('/reset-password',
     return res.json({ message: 'Password updated' });
   }
 );
+
+
+router.post('/contact',async(req,res)=>{
+   try {
+    const { name, email, message } = req.body;
+
+    if (!name || !email || !message) {
+      return res.status(400).json({ message: "All fields are required" });
+    }
+
+    const contact = new Contact({ name, email, message });
+    await contact.save();
+
+    return res.status(201).json({
+      message: "Message received successfully!",
+      contact,
+    });
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json({ message: "Server error" });
+  }
+})
+
+
+
+
+// Start Google login
+// router.get("/auth/google", passport.authenticate("google", {
+//   scope: ["profile", "email"], // Request profile and email permissions
+// }));
+
+// // Google callback route
+// router.get(
+//   "/auth/google/callback",
+//   passport.authenticate("google", {
+//     failureRedirect: "/login", // Redirect to login if authentication fails
+//   }),
+//   (req, res) => {
+//     // Successful authentication, redirect to home or dashboard
+//     res.redirect("/dashboard");
+//   }
+// );
+
+// // Log out route
+// router.get("/logout", (req, res) => {
+//   req.logout((err) => {
+//     if (err) {
+//       return res.status(500).json({ message: "Failed to log out" });
+//     }
+//     res.redirect("/");
+//   });
+// });
+
+
+
+
+
+
 
 module.exports = router;
