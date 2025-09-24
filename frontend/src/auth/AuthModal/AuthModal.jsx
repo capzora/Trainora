@@ -8,7 +8,7 @@ import LoginForm from "../../auth/Login/Login";
 import SignupForm from "../../auth/Signup/Signup";
 import ForgotForm from "../../auth/ForgotPassword/ForgotPassword";
 
-const AuthModal = ({ open, onClose , initialView = "login"}) => {
+const AuthModal = ({ open, onClose, initialView = "login" }) => {
   const { login } = useAuth();
   const [view, setView] = useState(initialView); // login | signup | forgot
   const [form, setForm] = useState({ email: "", password: "", name: "", phone: "" });
@@ -16,12 +16,10 @@ const AuthModal = ({ open, onClose , initialView = "login"}) => {
 
   const { register, handleSubmit, formState: { errors } } = useForm();
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
- 
+
   React.useEffect(() => {
     if (open) setView(initialView);
   }, [open, initialView]);
-
-
 
   // ✅ Login API
   const loginCall = async (data) => {
@@ -64,45 +62,49 @@ const AuthModal = ({ open, onClose , initialView = "login"}) => {
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-      <div className="bg-white rounded-2xl shadow-xl w-full max-w-md p-6 relative">
-        <button className="absolute top-3 right-3 text-gray-600 hover:text-red-500" onClick={onClose}>✕</button>
-
-        {view === "login" && (
-          <LoginForm
-            onLogin={loginCall}
-            switchToSignup={() => setView("signup")}
-            switchToForgot={() => setView("forgot")}
-            form={form}
-            handleChange={handleChange}
-            errors={errors}
-            handleSubmit={handleSubmit}
-            register={register}
-          />
-        )}
-
-        {view === "signup" && (
-          <SignupForm
-            onSignup={signupCall}
-            switchToLogin={() => setView("login")}
-            form={form}
-            handleChange={handleChange}
-            errors={errors}
-            handleSubmit={handleSubmit}
-            register={register}
-          />
-        )}
-
-        {view === "forgot" && (
-          <ForgotForm
-            onForgot={forgotCall}
-            email={email}
-            setEmail={setEmail}
-            switchToLogin={() => setView("login")}
-          />
-        )}
-      </div>
-    </div>
+    <>
+      {view === "forgot" ? (
+        // 🔥 Sirf card dikhayenge, background/blur hata diya
+        <ForgotForm
+          onForgot={forgotCall}
+          email={email}
+          setEmail={setEmail}
+          switchToLogin={() => setView("login")}
+          onClose={onClose}
+        />
+      ) : (
+        // Login / Signup ke liye modal + bg
+        <div className="fixed inset-0 backdrop-blur-sm z-[9999] flex items-center pt-10 justify-center">
+          <div className="w-full max-w-5xl h-[80vh] bg-white rounded-xl shadow-lg overflow-hidden">
+            {view === "login" && (
+              <LoginForm
+                onLogin={loginCall}
+                switchToSignup={() => setView("signup")}
+                switchToForgot={() => setView("forgot")}
+                form={form}
+                handleChange={handleChange}
+                errors={errors}
+                handleSubmit={handleSubmit}
+                register={register}
+                onClose={onClose}
+              />
+            )}
+            {view === "signup" && (
+              <SignupForm
+                onSignup={signupCall}
+                switchToLogin={() => setView("login")}
+                form={form}
+                handleChange={handleChange}
+                errors={errors}
+                handleSubmit={handleSubmit}
+                register={register}
+                onClose={onClose}
+              />
+            )}
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

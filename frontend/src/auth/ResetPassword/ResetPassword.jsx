@@ -59,8 +59,8 @@ const ResetPassword = ({ userId, token, onSuccess }) => {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen flex justify-center items-center">
-      <div className="w-full max-w-lg p-12 bg-white rounded-2xl shadow-xl">
+    <div className="bg-gray-100 flex justify-center items-center">
+      <div className="w-full max-w-lg p-12  md:bg-white/10 md:backdrop-blur-md rounded-2xl shadow-xl">
         <h2 className="text-3xl font-bold text-center mb-6">Reset Password</h2>
 
         {/* Password Field */}

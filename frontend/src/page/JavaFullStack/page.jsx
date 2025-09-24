@@ -11,7 +11,7 @@ import AdditionalBenefits from "../../components/ProgramAdditionalBenefits/Progr
 import FeeStructure from "../../components/ProgramFeeStructure/ProgramFeeStructure";
 import HiringPartners from "../../components/ProgramHiringPartners/ProgramHiringPartners";
 import SuccessStories from "../../components/ProgramSuccessStories/ProgramSuccessStories";
-import CallToActionForm from "../../components/ProgramCallToActionForm/ProgramCallToActionForm";
+import CallSection from "../../components/CallToAction/CallToAction";
 
 
 import { programsData } from "../../Data/ProgramData/ProgramData";
@@ -35,7 +35,7 @@ const JavaFullStack = () => {
       <FeeStructure data={program.feeStructure} courseId="java-full-stack"/>
       <HiringPartners data={program.hiringPartners} />
       <SuccessStories data={program.successStories} />
-      <CallToActionForm data={program.cta} />
+      <CallSection  />
     </div>
   );
 };

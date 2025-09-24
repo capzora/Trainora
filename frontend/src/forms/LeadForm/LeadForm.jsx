@@ -99,7 +99,7 @@ useEffect(() => {
     // 10 sec baad modal khulna
     const timer = setTimeout(() => {
       setOpen(true);
-    }, 10000);
+    }, 20000);
 
     return () => clearTimeout(timer);
   }, [parentOpen]);
