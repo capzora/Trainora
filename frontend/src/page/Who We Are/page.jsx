@@ -4,7 +4,7 @@ import TrainerNetworkMap from '../../components/TrainerNetworkMap/TrainerNetwork
 import GraduationImpactGraph from '../../components/GraduationImpactGraph/GraduationImpactGraph'
 import SectorWiseDistribution from '../../components/SectorWiseDistribution/SectorWiseDistribution'
 import CallToActionForm from '../../forms/CallToActionForm/CallToActionForm'
-
+import CallSection from "../../components/CallToAction/CallToAction"
 const Who = () => {
   return (
     <div>
@@ -12,7 +12,7 @@ const Who = () => {
 <TrainerNetworkMap/>
 <GraduationImpactGraph/>
 <SectorWiseDistribution/>
-<CallToActionForm/>
+ <CallSection/>
     </div>
   )
 }

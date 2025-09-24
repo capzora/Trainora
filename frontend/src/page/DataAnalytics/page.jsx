@@ -1,44 +1,43 @@
-import React from 'react'
-import DAHeroSection from '../../components/DAHeroSection/DAHeroSection'
-import DAProgramOutcomes from '../../components/DAProgramOutcomes/DAProgramOutcomes'
-import DAProgramOverview from '../../components/DAProgramOverview/DAProgramOverview'
-import DASyllabusOverview from '../../components/DASyllabusOverview/DASyllabusOverview'
-import DAProjectsShowcase from '../../components/DAProjectsShowcase/DAProjectsShowcase'
-import DAToolsTechnologies from '../../components/DAToolsTechnologies/DAToolsTechnologies'
-import TrainerProfile from '../../components/TrainerProfile/TrainerProfile'
-import KeyBenefits from '../../components/KeyBenefits/KeyBenefits'
-import AdditionalBenefits from '../../components/AdditionalBenefits/AdditionalBenefits'
-import FeeStructure from '../../components/FeeStructure/FeeStructure'
-import HiringPartners from '../../components/HiringPartners/HiringPartners'
-import SuccessStories from '../../components/SuccessStories/SuccessStories'
-import CallToActionForm from '../../forms/CallToActionForm/CallToActionForm'
+import React from "react";
+import HeroSection from "../../components/ProgramHeroSection/ProgramHerosection";
+import ProgramOverview from "../../components/ProgramOverview/ProgramOverview";
+import ProgramOutcomes from "../../components/ProgramOutcomes/ProgramOutcomes";
+import SyllabusOverview from "../../components/ProgramSyllabusOverview/ProgramSyllabusOverview";
+import ProjectsShowcase from "../../components/ProjectsShowcase/ProjectsShowcase";
+import ToolsTechnologies from "../../components/ProgramToolsTechnologies/ProgramToolsTechnologies";
+import TrainerProfile from "../../components/ProgramTrainerProfile/ProgramTrainerProfile";
+import KeyBenefits from "../../components/ProgramKeyBenefits/ProgramKeyBenefits";
+import AdditionalBenefits from "../../components/ProgramAdditionalBenefits/ProgramAdditionalBenefits";
+import FeeStructure from "../../components/ProgramFeeStructure/ProgramFeeStructure";
+import HiringPartners from "../../components/ProgramHiringPartners/ProgramHiringPartners";
+import SuccessStories from "../../components/ProgramSuccessStories/ProgramSuccessStories";
+import CallSection from "../../components/CallToAction/CallToAction";
+
+
+import { programsData } from "../../Data/ProgramData/ProgramData";
 
 const DataAnalytics = () => {
+   const courseId = "data-analytics"; 
+ const program = programsData[courseId];
+
+
   return (
     <div>
-      <DAHeroSection/>
-      <DAProgramOverview/>
-      <DAProgramOutcomes/>
-      <DASyllabusOverview/>
-      <DAProjectsShowcase/>
-      <DAToolsTechnologies/>
-      <TrainerProfile/>
-      <KeyBenefits/>
-      <AdditionalBenefits/>
-      <FeeStructure/>
-      <HiringPartners/>
-      <SuccessStories/>
-      <CallToActionForm/>
-
-
-
-
-
-
-      
-
+       <HeroSection data={program.hero} courseId={courseId} />
+      <ProgramOverview data={program.overview} />
+      <ProgramOutcomes data={program.outcomes} />
+      <SyllabusOverview data={program.syllabus} />
+      <ProjectsShowcase data={program.projects} />
+      <ToolsTechnologies data={program.tools} />
+      <TrainerProfile data={program.trainer} />
+      <KeyBenefits data={program.keyBenefits} />
+      <AdditionalBenefits data={program.additionalBenefits} />
+      <FeeStructure data={program.feeStructure} courseId="data-analytics" />
+      <HiringPartners data={program.hiringPartners} />
+      <SuccessStories data={program.successStories} />
+      <CallSection />
     </div>
-  )
-}
+  );
+};
 
-export default DataAnalytics
+export default DataAnalytics;
