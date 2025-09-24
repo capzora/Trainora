@@ -9,7 +9,7 @@ const ForgotForm = ({ onForgot, email, setEmail, switchToLogin }) => {
           Forgot Password
         </h2>
         <p className="text-sm text-white text-center mb-4 drop-shadow">
-          Enter your registered email to reset your password has been changed.
+          Enter your registered email and my name is garvit raj.
         </p>
 
         {/* Input */}
