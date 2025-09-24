@@ -3,8 +3,7 @@ import ReferHero from '../../components/ReferHero/ReferHero'
 import HowReferWorks from '../../components/HowReferWorks/HowReferWorks'
 import ReferralForm from '../../forms/ReferralForm/ReferralForm'
 import ReferralInstructions from '../../components/ReferralInstructions/ReferralInstructions'
-import CallToActionForm from '../../forms/CallToActionForm/CallToActionForm'
-
+import CallSection from '../../components/CallToAction/CallToAction'
 const Refer = () => {
   return (
     <div>
@@ -12,7 +11,7 @@ const Refer = () => {
       <HowReferWorks/>
       <ReferralForm/>
       <ReferralInstructions/>
-      <CallToActionForm/>
+      <CallSection/>
     </div>
   )
 }

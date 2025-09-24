@@ -3,8 +3,7 @@ import CareerHero from '../../components/CareerHero/CareerHero'
 import MarketValueStats from '../../components/MarketValueStats/MarketValueStats'
 import SalaryInsightsGraph from '../../components/SalaryInsightsGraph/SalaryInsightsGraph'
 import HiringCompanies from '../../components/HiringCompanies/HiringCompanies'
-import CallToActionForm from '../../forms/CallToActionForm/CallToActionForm'
-
+import CallSection from '../../components/CallToAction/CallToAction'
 const CareerOutcomes = () => {
   return (
     <div>
@@ -12,7 +11,7 @@ const CareerOutcomes = () => {
 <MarketValueStats/>
 <SalaryInsightsGraph/>
 <HiringCompanies/>
-<CallToActionForm/>
+<CallSection/>
 
     </div>
   )
