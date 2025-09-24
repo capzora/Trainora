@@ -1,24 +1,30 @@
-# Logs
-logs
-*.log
+# Node / JS
+node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-
-node_modules
-dist
-dist-ssr
-*.local
-
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+package-lock.json
+yarn.lock
+ 
+# Build / dist
+dist/
+build/
+frontend/build/
+backend/dist/
+ 
+# Environment
+.env
+.env.local
+.env.*.local
+ 
+# OS / Editor
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+.vscode/
+.idea/
+ 
+# Logs
+*.log
+ 
+# Optional: large asset folders (agar aap assets remote store pe rakhna chahte ho)
+# public/assets/
+# frontend/public/assets/

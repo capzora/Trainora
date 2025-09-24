@@ -64,7 +64,7 @@ const AuthModal = ({ open, onClose, initialView = "login" }) => {
   return (
     <>
       {view === "forgot" ? (
-        // 🔥 Sirf card dikhayenge, background/blur hata diya
+       
         <ForgotForm
           onForgot={forgotCall}
           email={email}
